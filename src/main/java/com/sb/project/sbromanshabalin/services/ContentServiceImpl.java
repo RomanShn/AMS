@@ -10,20 +10,19 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
-public class ContentServiceImpl implements ContentService
-{
+public class ContentServiceImpl implements ContentService {
     private final ContentRepository contentRepository;
 
     @Autowired
-    public ContentServiceImpl(ContentRepository contentRepository)
-    {
+    public ContentServiceImpl(ContentRepository contentRepository) {
         this.contentRepository = contentRepository;
     }
 
-
+    /**
+     * Метод добавляющий записи в репозиторий контента.
+     */
     @Override
-    public void saveContent(InputContentDto inputContentDto)
-    {
+    public void saveContent(InputContentDto inputContentDto) {
         inputContentDto.getContent().parallelStream().forEach(contentDto ->
         {
             var pages = contentDto.getPages().stream()

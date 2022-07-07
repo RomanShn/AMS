@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Компания (отправка)происходит по количеству страниц {@link com.sb.project.sbromanshabalin.entities.Page}
+ * Компания (отправка)происходит по количеству страниц.
  */
 @Data
 @Builder

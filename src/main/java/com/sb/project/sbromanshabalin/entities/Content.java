@@ -27,7 +27,7 @@ import java.util.UUID;
 @Table(name = "content")
 public class Content {
     @Id
-        @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
     @ManyToMany(cascade = {

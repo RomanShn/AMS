@@ -14,19 +14,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/viewed")
-public class ViewedController
-{
+public class ViewedController {
     private final ViewedService viewedService;
 
     @Autowired
-    public ViewedController(ViewedService viewedService)
-    {
+    public ViewedController(ViewedService viewedService) {
         this.viewedService = viewedService;
     }
 
+    /**
+     * Метод создающий новые записи о просмотрах в БД.
+     */
     @PostMapping
-    public void saveViewed(@RequestBody InputViewedDto viewed)
-    {
+    public void saveViewed(@RequestBody InputViewedDto viewed) {
         viewedService.saveViewed(viewed);
     }
 }

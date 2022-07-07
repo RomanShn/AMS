@@ -42,7 +42,7 @@ public class TargetOfferServiceImpl implements TargetOfferService
     }
 
     /**
-     * Отправляем раз в сутки
+     * Метод, имитирующий отправку раз в сутки информацию от CDS.
      */
     @Scheduled(fixedRate = 86400000)
     public void sentTargetOfferEveryDay()

@@ -10,22 +10,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ViewedServiceImpl implements ViewedService
-{
+public class ViewedServiceImpl implements ViewedService {
     private final ViewedRepository viewedRepository;
     private final UsersRepository usersRepository;
 
     @Autowired
     public ViewedServiceImpl(ViewedRepository viewedRepository,
-                             UsersRepository usersRepository)
-    {
+                             UsersRepository usersRepository) {
         this.viewedRepository = viewedRepository;
         this.usersRepository = usersRepository;
     }
 
+    /**
+     * Метод добавляющий записи о просмотрах.
+     */
     @Override
-    public void saveViewed(InputViewedDto inputViewedDto)
-    {
+    public void saveViewed(InputViewedDto inputViewedDto) {
         inputViewedDto.getViewed().forEach(viewedDto ->
         {
             var users = new Users();

@@ -14,19 +14,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/content")
-public class ContentController
-{
+public class ContentController {
     private final ContentService contentService;
 
     @Autowired
-    public ContentController(ContentService contentService)
-    {
+    public ContentController(ContentService contentService) {
         this.contentService = contentService;
     }
 
+    /**
+     * Метод создающий новые записи о контенте в БД.
+     */
     @PostMapping
-    public void saveContent(@RequestBody InputContentDto content)
-    {
+    public void saveContent(@RequestBody InputContentDto content) {
         contentService.saveContent(content);
     }
 }
